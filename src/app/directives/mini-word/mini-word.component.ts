@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { NgStyle } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
     imports: [NgStyle, FormsModule]
 })
 export class MiniWordComponent {
-  color = 'red';
-  size = 75;
-  font = 'garamond';
+  color = signal('red');
+  size = signal(75);
+  font = signal('garamond');
 }

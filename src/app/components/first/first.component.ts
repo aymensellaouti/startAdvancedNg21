@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { SecondComponent } from '../second.component';
 
 @Component({
@@ -9,13 +9,13 @@ import { SecondComponent } from '../second.component';
 })
 export class FirstComponent {
   name = 'aymen';
-  message = '';
-  isHidden = false;
+  message = signal('');
+  isHidden = signal(false);
   changeMessage(newMessage: string) {
-    this.message = newMessage;
+    this.message.set(newMessage);
   }
   showHide() {
-    this.isHidden = !this.isHidden;
+    this.isHidden.update((isHidden) => !isHidden);
   }
   constructor() {
     /*     setInterval(() => {

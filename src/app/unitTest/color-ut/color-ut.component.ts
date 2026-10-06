@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
     selector: 'app-color-ut',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./color-ut.component.css']
 })
 export class ColorUtComponent {
-  divColor = 'red';
+  divColor = signal('red');
 
   /**
    * It change the div backgound color
@@ -14,6 +14,6 @@ export class ColorUtComponent {
    * @param newColor: string
    */
   changeColor(newColor: string) {
-    this.divColor = newColor;
+    this.divColor.set(newColor);
   }
 }

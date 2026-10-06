@@ -1,4 +1,4 @@
-import {Component, input, output} from '@angular/core';
+import {Component, input, output, signal} from '@angular/core';
 import {User} from "../users.service";
 import { FormsModule } from '@angular/forms';
 
@@ -19,10 +19,10 @@ export class UserListComponent {
   readonly usersCluster = input<string>('');
   readonly users = input<User[]>([]);
   readonly add = output<string>();
-  userFullName: string = '';
+  userFullName = signal('');
   addUser() {
-    this.add.emit(this.userFullName);
-    this.userFullName = '';
+    this.add.emit(this.userFullName());
+    this.userFullName.set('');
   }
   fibo(n: number): number {
     const fib = fibonnaci(n);

@@ -1,4 +1,4 @@
-<!-- @for (todo of todos; track todo.id) {
+<!-- @for (todo of todos(); track todo.id) {
   <pre>{{ todo | json }}</pre>
 } -->
 @for (todo of todos$ | async; track todo.id) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,8 +8,8 @@ import { FormsModule } from '@angular/forms';
     imports: [FormsModule]
 })
 export class CardProfilComponent {
-  name = 'sellaouti';
-  firstname = 'aymen';
-  job = 'teacher';
-  path = 'rotating_card_profile.png';
+  name = signal('sellaouti');
+  firstname = signal('aymen');
+  job = signal('teacher');
+  path = signal('rotating_card_profile.png');
 }

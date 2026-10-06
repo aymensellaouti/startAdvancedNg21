@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,5 +8,5 @@ import { FormsModule } from '@angular/forms';
     imports: [FormsModule]
 })
 export class TwoComponent {
-  two = 'init value';
+  two = signal('init value');
 }

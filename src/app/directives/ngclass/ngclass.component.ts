@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RainbowDirective } from '../rainbow.directive';
 import { HighlightDirective } from '../highlight.directive';
@@ -10,8 +10,8 @@ import { HighlightDirective } from '../highlight.directive';
     imports: [NgClass, RainbowDirective, HighlightDirective]
 })
 export class NgclassComponent {
-  isAllume = false;
+  isAllume = signal(false);
   interrupteur() {
-    this.isAllume = !this.isAllume;
+    this.isAllume.update((isAllume) => !isAllume);
   }
 }

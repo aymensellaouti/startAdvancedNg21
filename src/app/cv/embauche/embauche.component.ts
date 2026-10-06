@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { EmbaucheService } from '../services/embauche.service';
 import { Cv } from '../model/cv';
 import { ItemComponent } from '../item/item.component';
@@ -10,7 +10,7 @@ import { ItemComponent } from '../item/item.component';
     imports: [ItemComponent]
 })
 export class EmbaucheComponent {
-  public embauchees: Cv[] = [];
+  public embauchees: Signal<Cv[]>;
   constructor(private embaucheService: EmbaucheService) {
     this.embauchees = this.embaucheService.getEmbauchees();
   }

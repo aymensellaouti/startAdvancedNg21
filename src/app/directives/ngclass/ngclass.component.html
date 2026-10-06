@@ -1,6 +1,6 @@
 <div (click)="interrupteur()" [ngClass]="{
-    'allume': isAllume,
-    'eteinte': !isAllume
+    'allume': isAllume(),
+    'eteinte': !isAllume()
   }">ampoule</div>
 
 <input type="text" appRainbow>

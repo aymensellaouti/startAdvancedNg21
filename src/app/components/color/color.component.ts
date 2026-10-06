@@ -1,4 +1,4 @@
-import { Component, OnInit, input } from "@angular/core";
+import { Component, OnInit, input, signal } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -13,7 +13,7 @@ export class ColorComponent implements OnInit {
    *
    * The color representing the Div
    */
-  divColor = "";
+  divColor = signal("");
 
   /**
    * It change the div backgound color
@@ -28,10 +28,10 @@ export class ColorComponent implements OnInit {
   ngOnInit(): void {
     const defaultColor = this.defaultColor();
     console.log("In ngOnInit", defaultColor);
-    this.divColor = defaultColor;
+    this.divColor.set(defaultColor);
   }
 
   changeColor(newColor: string) {
-    this.divColor = newColor;
+    this.divColor.set(newColor);
   }
 }

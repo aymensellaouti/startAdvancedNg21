@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { Todo } from '../model/todo';
 import { TodoService } from '../service/todo.service';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
     imports: [FormsModule]
 })
 export class TodoComponent {
-  todos: Todo[] = [];
+  todos: Signal<Todo[]>;
   todo = new Todo();
   constructor(private todoService: TodoService) {
     this.todos = this.todoService.getTodos();
