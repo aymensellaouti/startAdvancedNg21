@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormsModule } from '@angular/forms';
 import { CvService } from '../services/cv.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -10,7 +10,7 @@ import { Cv } from '../model/cv';
     selector: 'app-add-cv',
     templateUrl: './add-cv.component.html',
     styleUrls: ['./add-cv.component.css'],
-    standalone: false
+    imports: [FormsModule]
 })
 export class AddCvComponent {
   constructor(

@@ -5,8 +5,7 @@ import { ToastrService } from "ngx-toastr";
 @Component({
     selector: "app-test-observable",
     templateUrl: "./test-observable.component.html",
-    styleUrls: ["./test-observable.component.css"],
-    standalone: false
+    styleUrls: ["./test-observable.component.css"]
 })
 export class TestObservableComponent {
   firstObservable$: Observable<number>;

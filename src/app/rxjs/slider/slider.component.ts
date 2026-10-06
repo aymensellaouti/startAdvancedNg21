@@ -1,11 +1,12 @@
 import { Component, Input } from "@angular/core";
 import { Observable, map, startWith, timer } from "rxjs";
+import { NgStyle } from "@angular/common";
 
 @Component({
     selector: "app-slider",
     templateUrl: "./slider.component.html",
     styleUrls: ["./slider.component.css"],
-    standalone: false
+    imports: [NgStyle]
 })
 export class SliderComponent {
   @Input() timer = 1500;
