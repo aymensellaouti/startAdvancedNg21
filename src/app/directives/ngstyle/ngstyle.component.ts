@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { NgStyle } from '@angular/common';
 
 @Component({
@@ -8,5 +8,5 @@ import { NgStyle } from '@angular/common';
     imports: [NgStyle]
 })
 export class NgstyleComponent {
-  @Input() color = 'lightgreen';
+  readonly color = input('lightgreen');
 }

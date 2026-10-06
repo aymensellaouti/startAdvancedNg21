@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit, input } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -7,7 +7,7 @@ import { ActivatedRoute } from "@angular/router";
     styleUrls: ["./color.component.css"]
 })
 export class ColorComponent implements OnInit {
-  @Input() defaultColor = "red";
+  readonly defaultColor = input("red");
 
   /**
    *
@@ -22,12 +22,13 @@ export class ColorComponent implements OnInit {
    */
 
   constructor(private activatedRoute: ActivatedRoute) {
-    console.log("In constructor", this.defaultColor);
+    console.log("In constructor", this.defaultColor());
   }
 
   ngOnInit(): void {
-    console.log("In ngOnInit", this.defaultColor);
-    this.divColor = this.defaultColor;
+    const defaultColor = this.defaultColor();
+    console.log("In ngOnInit", defaultColor);
+    this.divColor = defaultColor;
   }
 
   changeColor(newColor: string) {

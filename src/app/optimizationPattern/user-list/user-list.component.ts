@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, input, output} from '@angular/core';
 import {User} from "../users.service";
 import { FormsModule } from '@angular/forms';
 
@@ -16,9 +16,9 @@ export const fibonnaci = (n: number): number => {
     imports: [FormsModule]
 })
 export class UserListComponent {
-  @Input() usersCluster: string = '';
-  @Input() users: User[] = [];
-  @Output() add = new EventEmitter<string>();
+  readonly usersCluster = input<string>('');
+  readonly users = input<User[]>([]);
+  readonly add = output<string>();
   userFullName: string = '';
   addUser() {
     this.add.emit(this.userFullName);

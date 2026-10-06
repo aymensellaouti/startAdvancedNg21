@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Cv } from '../model/cv';
 import { CvService } from '../services/cv.service';
 import { NgStyle } from '@angular/common';
@@ -11,12 +11,13 @@ import { DefaultImagePipe } from '../pipes/default-image.pipe';
     imports: [NgStyle, DefaultImagePipe]
 })
 export class ItemComponent {
-  @Input() cv: Cv | null = null;
-  @Input() size = 50;
+  readonly cv = input<Cv | null>(null);
+  readonly size = input(50);
   constructor(private cvService: CvService) {}
-  @Output() selectCv = new EventEmitter<Cv>(); 
+  readonly selectCv = output<Cv>(); 
 
   onSelectCv() {
-    if (this.cv) this.selectCv.emit(this.cv);
+    const cv = this.cv();
+    if (cv) this.selectCv.emit(cv);
   }
 }
