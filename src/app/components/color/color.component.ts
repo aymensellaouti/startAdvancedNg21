@@ -1,9 +1,10 @@
-import { Component, OnInit, input, signal } from "@angular/core";
+import { Component, OnInit, input, signal, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "app-color",
     templateUrl: "./color.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ["./color.component.css"]
 })
 export class ColorComponent implements OnInit {

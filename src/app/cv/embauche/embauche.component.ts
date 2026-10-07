@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { Component, Signal, ChangeDetectionStrategy } from '@angular/core';
 import { EmbaucheService } from '../services/embauche.service';
 import { Cv } from '../model/cv';
 import { ItemComponent } from '../item/item.component';
@@ -7,6 +7,7 @@ import { ItemComponent } from '../item/item.component';
     selector: 'app-embauche',
     templateUrl: './embauche.component.html',
     styleUrls: ['./embauche.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ItemComponent]
 })
 export class EmbaucheComponent {

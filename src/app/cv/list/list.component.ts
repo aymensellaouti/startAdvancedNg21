@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { Cv } from '../model/cv';
 import { NgClass } from '@angular/common';
 import { ItemComponent } from '../item/item.component';
@@ -7,6 +7,7 @@ import { ItemComponent } from '../item/item.component';
     selector: 'app-list',
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgClass, ItemComponent]
 })
 export class ListComponent {

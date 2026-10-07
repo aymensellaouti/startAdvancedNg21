@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { Component, signal, ChangeDetectionStrategy } from "@angular/core";
 import { Cv } from "../model/cv";
 import { LoggerService } from "../../services/logger.service";
 import { ToastrService } from "ngx-toastr";
@@ -12,6 +12,7 @@ import { UpperCasePipe, DatePipe } from "@angular/common";
     selector: "app-cv",
     templateUrl: "./cv.component.html",
     styleUrls: ["./cv.component.css"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ListComponent, CvCardComponent, EmbaucheComponent, UpperCasePipe, DatePipe]
 })
 export class CvComponent {

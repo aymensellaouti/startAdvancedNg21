@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { from, of } from 'rxjs';
 
 @Component({
     selector: 'app-from-of',
     templateUrl: './from-of.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./from-of.component.css']
 })
 export class FromOfComponent {

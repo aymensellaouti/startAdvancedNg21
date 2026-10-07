@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {User, UsersService} from "../users.service";
 import * as ChartJs from 'chart.js/auto';
 import { UserListComponent } from '../user-list/user-list.component';
@@ -6,6 +6,7 @@ import { UserListComponent } from '../user-list/user-list.component';
     selector: 'app-rh',
     templateUrl: './rh.component.html',
     styleUrls: ['./rh.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [UserListComponent]
 })
 export class RhComponent implements OnInit {

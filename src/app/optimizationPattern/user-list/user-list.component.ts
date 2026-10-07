@@ -1,4 +1,4 @@
-import {Component, input, output, signal} from '@angular/core';
+import {Component, input, output, signal, ChangeDetectionStrategy} from '@angular/core';
 import {User} from "../users.service";
 import { FormsModule } from '@angular/forms';
 
@@ -13,6 +13,7 @@ export const fibonnaci = (n: number): number => {
     selector: 'app-user-list',
     templateUrl: './user-list.component.html',
     styleUrls: ['./user-list.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule]
 })
 export class UserListComponent {

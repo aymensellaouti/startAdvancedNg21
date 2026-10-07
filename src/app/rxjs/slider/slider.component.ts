@@ -1,4 +1,4 @@
-import { Component, input } from "@angular/core";
+import { Component, input, ChangeDetectionStrategy } from "@angular/core";
 import { Observable, map, startWith, timer } from "rxjs";
 import { NgStyle } from "@angular/common";
 
@@ -6,6 +6,7 @@ import { NgStyle } from "@angular/common";
     selector: "app-slider",
     templateUrl: "./slider.component.html",
     styleUrls: ["./slider.component.css"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgStyle]
 })
 export class SliderComponent {

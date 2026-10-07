@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 
@@ -14,6 +14,7 @@ export interface TodoModel {
     selector: 'app-test-http',
     templateUrl: './test-http.component.html',
     styleUrls: ['./test-http.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [AsyncPipe, JsonPipe]
 })
 export class TestHttpComponent {

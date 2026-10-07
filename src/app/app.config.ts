@@ -7,6 +7,7 @@ import { provideRouter } from "@angular/router";
 import {
   provideHttpClient,
   withInterceptorsFromDi,
+  withXhr
 } from "@angular/common/http";
 import { provideServiceWorker } from "@angular/service-worker";
 import { provideToastr } from "ngx-toastr";
@@ -20,7 +21,7 @@ export const appConfig: ApplicationConfig = {
     // on garde zone.js explicitement, comme dans le projet d'origine.
     provideZoneChangeDetection(),
     provideRouter(routes),
-    provideHttpClient(withInterceptorsFromDi()),
+    provideHttpClient(withXhr(), withInterceptorsFromDi()),
     AuthInterceptorProvider,
     provideToastr(),
     provideServiceWorker("ngsw-worker.js", {

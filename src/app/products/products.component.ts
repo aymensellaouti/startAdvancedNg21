@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import {
   BehaviorSubject,
   Observable,
@@ -16,6 +16,7 @@ import { AsyncPipe } from "@angular/common";
     selector: "app-products",
     templateUrl: "./products.component.html",
     styleUrls: ["./products.component.css"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [AsyncPipe]
 })
 export class ProductsComponent {

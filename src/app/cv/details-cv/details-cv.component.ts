@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Cv } from '../model/cv';
 import { CvService } from '../services/cv.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,6 +11,7 @@ import { DefaultImagePipe } from '../pipes/default-image.pipe';
     selector: 'app-details-cv',
     templateUrl: './details-cv.component.html',
     styleUrls: ['./details-cv.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [DefaultImagePipe]
 })
 export class DetailsCvComponent implements OnInit {

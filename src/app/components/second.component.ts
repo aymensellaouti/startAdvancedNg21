@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-second',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
       second works!
     </p>
   `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: []
 })
 export class SecondComponent {

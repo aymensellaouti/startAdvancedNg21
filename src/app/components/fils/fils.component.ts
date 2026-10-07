@@ -1,7 +1,8 @@
-import { Component, output } from '@angular/core';
+import { Component, output, ChangeDetectionStrategy } from '@angular/core';
 @Component({
     selector: 'app-fils',
     templateUrl: './fils.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./fils.component.css']
 })
 export class FilsComponent {

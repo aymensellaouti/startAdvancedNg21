@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { NgStyle } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-mini-word',
     templateUrl: './mini-word.component.html',
     styleUrls: ['./mini-word.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgStyle, FormsModule]
 })
 export class MiniWordComponent {
